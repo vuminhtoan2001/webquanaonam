@@ -4,32 +4,34 @@
 }
 
 .slick-slide {
-margin: 0px 10px;
+  margin: 0px 10px;
 }
 
 .slick-slide img {
-width: 100%;
-height: 50%;;
+  width: 100%;
+  height: 50%;
 }
 
 .slick-prev:before,
 .slick-next:before {
-color: gray;
+  color: gray;
 }
 
-
 .slick-slide {
-transition: all ease-in-out .3s;
-opacity: .2;
+  transition: all ease-in-out 0.3s;
+  opacity: 0.2;
 }
 
 .slick-active {
-opacity: 1;
+  opacity: 1;
 }
 
 .slick-current {
-opacity: 1;
+  opacity: 1;
 }
-@media(max-width: 576px){
-
+@media (max-width: 576px) {
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
+  }
 }

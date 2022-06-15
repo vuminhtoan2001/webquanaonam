@@ -1,6 +1,8 @@
      <div class="row" id="relative" style="height: 40px;line-height: 40px;background-color: #f5f4f3;padding-left: 20px;">
-        <div class="aohongnhat" style="font-size :15px;">
-        <a href="<?php echo _WEB_ROOT ?>" style="color: black"><i class="fa fa-home" aria-hidden="true"></i> Trang chủ </a>/ <a href="<?php echo _WEB_ROOT ?>/products" style="color: black">Sản phẩm</a> / <?php echo $product['TENSP'];?>
+        <div class="aohongnhat"
+        style="font-size :15px;display: -webkit-box;-webkit-line-clamp: 1;overflow: hidden;
+  	    -webkit-box-orient: vertical;">
+            <a href="<?php echo _WEB_ROOT; ?>" style="color: black"><i class="fa fa-home" aria-hidden="true"></i> Trang chủ </a>/ <a href="<?php echo _WEB_ROOT; ?>/products" style="color: black">Sản phẩm</a> / <?php echo $product['TENSP']; ?>
         </div>
     </div>
     <div class="container " style="margin-top: 20px;">
@@ -9,11 +11,17 @@
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <?php $product['ANH'] = !empty($product['ANH']) ? $product['ANH'] : 'no-image.png'?>
-                       <img src="<?php echo _WEB_ROOT ?>/public/DataUpload/<?php echo $product['ANH'] ;?>">
+                        <?php $product['ANH'] = !empty($product['ANH'])
+                            ? $product['ANH']
+                            : 'no-image.png'; ?>
+                       <img src="<?php echo _WEB_ROOT; ?>/public/DataUpload/<?php echo $product[
+    'ANH'
+]; ?>">
                       </div>
                       <div class="carousel-item">
-                        <img src="<?php echo _WEB_ROOT ?>/public/DataUpload/<?php echo $product['ANH'] ;?>">
+                        <img src="<?php echo _WEB_ROOT; ?>/public/DataUpload/<?php echo $product[
+    'ANH'
+]; ?>">
                       </div>
 
                     </div>
@@ -28,28 +36,34 @@
                   </div>
             </div>
             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
-                <p><h4><b><?php echo $product['TENSP']?></b></h4></p>
+                <p><h4><b><?php echo $product['TENSP']; ?></b></h4></p>
                 <hr>
-                <p><h6>MSP: <?php echo $product['MASP']?></h6></p>
-                <?php
-                  if($product['GIA_SALE'] == 0){
-                ?>
-                <p><h4 style="color: red;"><?php echo number_format($product['GIA'],0)?>đ</h4></p>
-                <?php
-                  }else{
-                ?>
+                <p><h6>MSP: <?php echo $product['MASP']; ?></h6></p>
+                <?php if ($product['GIA_SALE'] == 0) { ?>
+                <p><h4 style="color: red;"><?php echo number_format(
+                    $product['GIA'],
+                    0
+                ); ?>đ</h4></p>
+                <?php } else { ?>
                   <p>
-                    <h4 style="color: red;"><?php echo number_format($product['GIA_SALE'],0)?>đ</h4>
-                    <span style="text-decoration:line-through"><?php echo number_format($product['GIA'],0)?>đ </span>
+                    <h4 style="color: red;"><?php echo number_format(
+                        $product['GIA_SALE'],
+                        0
+                    ); ?>đ</h4>
+                    <span style="text-decoration:line-through"><?php echo number_format(
+                        $product['GIA'],
+                        0
+                    ); ?>đ </span>
                   </p>
 
-                <?php
-                  }
-                ?>
+                <?php } ?>
                 <hr>
                 <div class="row">
                   <div class="col-12 col-sm-9 col-md-9 col-lg-9">
-                      <div style="margin-bottom:20px"><p  style="color: black"><strong>Lượt xem :</strong> <?php echo number_format($product['VIEW'],0)?> <i class="fa fa-eye" aria-hidden="true"></i></p></div>
+                      <div style="margin-bottom:20px"><p  style="color: black"><strong>Lượt xem :</strong> <?php echo number_format(
+                          $product['VIEW'],
+                          0
+                      ); ?> <i class="fa fa-eye" aria-hidden="true"></i></p></div>
 
                   </div>
 
@@ -58,8 +72,13 @@
                 <div class="row">
                   <div class="col-12 col-sm-8 col-md-8 col-lg-8">
                     <div>
-                      <a href="<?php echo _WEB_ROOT."/cart/single_cart"?>/<?php echo $product['MASP']?>" class="btn btn-dark">Mua ngay</a>
-                      <a class="btn btn-dark" href="<?php echo _WEB_ROOT ?>/cart/addtocart/<?php echo $product['MASP']?>"><i class="far fa-shopping-cart"></i>Thêm vào giỏ</a>
+                      <a href="<?php echo _WEB_ROOT .
+                          '/cart/single_cart'; ?>/<?php echo $product[
+    'MASP'
+]; ?>" class="btn btn-dark">Mua ngay</a>
+                      <a class="btn btn-dark" href="<?php echo _WEB_ROOT; ?>/cart/addtocart/<?php echo $product[
+    'MASP'
+]; ?>"><i class="far fa-shopping-cart"></i>Thêm vào giỏ</a>
                     </div>
                   </div>
                 </div>
@@ -76,13 +95,15 @@
 
                 <div>
                 <p><h4 style="text-align:center"><b>MÔ TẢ SẢN PHẨM</b></h4></p>
-                  <p><b>HÃNG SẢN XUẤT: </b> <?php echo $product['MAHANGSX']?></p>
+                  <p><b>HÃNG SẢN XUẤT: </b> <?php echo $product[
+                      'MAHANGSX'
+                  ]; ?></p>
                   <p><b>CHI TIẾT</b>
-                    <p><?php echo $product['MOTA']?></p>
+                    <p><?php echo $product['MOTA']; ?></p>
 
                   </p>
                   <p><b>CHẤT LIỆU </b><br>
-                    <?php echo $product['CHATLIEU']?>
+                    <?php echo $product['CHATLIEU']; ?>
                   </p>
 
                 </div>

@@ -1,7 +1,7 @@
 <form class="container" style="margin-top: 20px;" method="GET">
   <h4 style="margin:30px auto; text-align:center; color:#005494;" class="">HOT NEWS</h4>
   <div class="row" style="margin-top:20px">
-    <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3" style="margin-bottom:20px">
         <div class="list-group">
         <button type="button" class="btn btn-dark active" aria-current="true">
         DANH MỤC TIN TỨC

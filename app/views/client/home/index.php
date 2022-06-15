@@ -29,13 +29,12 @@
       <div class="row">
           <div class="col-6  ">
               <div class="card bg-dark text-white text-center">
-                  <a href="#"><img src="https://theme.hstatic.net/1000327709/1000419436/14/hc_img_1.png?v=1484" class="card-img" alt="..."></a>
+                  <a href="<?php echo _WEB_ROOT."/products/category/ASM" ?>"><img src="https://theme.hstatic.net/1000327709/1000419436/14/hc_img_1.png?v=1484" class="card-img" alt="..."></a>
                   <div class="card-img-overlay">
-                      <h5 class="card-title">ÁO SƠ MI</h5>
-                      <div class="row">
-                          <div class="col-12">
+                      <h5 class="card-title hide-on-mobile">ÁO SƠ MI</h5>
+                      <div class="row ">
+                          <div class="col-12  sm-0">
                               <a href="<?php echo _WEB_ROOT."/products/category/ASM" ?>"><button type="button" class="btn btn-outline-light">SƠ MI DÀI TAY</button></a>
-                              <a href="<?php echo _WEB_ROOT."/products/category/ASM" ?>"><button type="button" class="btn btn-outline-light">SƠ MI ELEGANT</button></a>
                           </div>
                     </div>
                   </div>
@@ -45,11 +44,10 @@
               <div class="card bg-dark text-white text-center">
                   <a href="#"><img src="https://theme.hstatic.net/1000327709/1000419436/14/hc_img_2.png?v=1484" class="card-img" alt="..."></a>
                   <div class="card-img-overlay">
-                      <h5 class="card-title">ÁO VESTON</h5>
+                      <h5 class="card-title hide-on-mobile">ÁO VESTON</h5>
                       <div class="row">
                           <div class="col-12">
                               <a href="<?php echo _WEB_ROOT."/products/category/AV"?>"><button type="button" class="btn btn-outline-light">VESTON</button></a>
-                              <a href="<?php echo _WEB_ROOT."/products/category/AV"?>"><button type="button" class="btn btn-outline-light">VESTON ELEGANT</button></a>
                           </div>
                     </div>
                   </div>
@@ -61,7 +59,7 @@
               <div class="card bg-dark text-white text-center">
                   <a href="#"><img src="https://theme.hstatic.net/1000327709/1000419436/14/hc_img_3.png?v=1484" class="card-img" alt="..."></a>
                   <div class="card-img-overlay">
-                      <h5 class="card-title">ÁO PHÔNG</h5>
+                      <h5 class="card-title hide-on-mobile">ÁO PHÔNG</h5>
                       <div class="row">
                           <div class="col-12">
                               <a href="<?php echo _WEB_ROOT."/products/category/AP"?>"><button type="button" class="btn btn-outline-light">ÁO PHÔNG NGẮN TAY</button></a>
@@ -74,10 +72,9 @@
               <div class="card bg-dark text-white text-center">
                   <a href="#"><img src="https://theme.hstatic.net/1000327709/1000419436/14/hc_img_4.png?v=1484" class="card-img" alt="..."></a>
                   <div class="card-img-overlay">
-                      <h5 class="card-title">QUẦN</h5>
+                      <h5 class="card-title hide-on-mobile">QUẦN</h5>
                       <div class="row">
                           <div class="col-12">
-                              <a href="<?php echo _WEB_ROOT."/products/category/QA"?>"><button type="button" class="btn btn-outline-light">QUẦN KAKI</button></a>
                               <a href="<?php echo _WEB_ROOT."/products/category/QA"?>"><button type="button" class="btn btn-outline-light">QUẦN ÂU</button></a>
                           </div>
                     </div>
@@ -90,7 +87,7 @@
               <div class="card bg-dark text-white text-center">
                   <a href="#"><img src="https://theme.hstatic.net/1000327709/1000419436/14/hc_img_5.png?v=1484" class="card-img" alt="..."></a>
                   <div class="card-img-overlay">
-                      <h5 class="card-title">ÁO SƠ MI CỘC TAY</h5>
+                      <h5 class="card-title hide-on-mobile">ÁO SƠ MI CỘC TAY</h5>
                       <div class="row">
                           <div class="col-12">
                               <a href="<?php echo _WEB_ROOT."/products/category/ASM" ?>"><button type="button" class="btn btn-outline-light">ÁO SƠ MI CỘC TAY</button></a>
@@ -103,7 +100,7 @@
               <div class="card bg-dark text-white text-center">
                   <a href="#"><img src="https://theme.hstatic.net/1000327709/1000419436/14/hc_img_6.png?v=1484" class="card-img" alt="..."></a>
                   <div class="card-img-overlay">
-                      <h5 class="card-title">QUẦN SOOC</h5>
+                      <h5 class="card-title hide-on-mobile">QUẦN SOOC</h5>
                       <div class="row">
                           <div class="col-12">
                               <a href="<?php echo _WEB_ROOT."/products/category/QS"?>"><button type="button" class="btn btn-outline-light">QUẦN SOOC</button></a>
@@ -127,11 +124,11 @@
       ?>
         <div class="col-3 ">
             <div class="text-center img">
-                <a href="products/detail/<?php echo $product['MASP'] ?>">
+                <a href="<?php echo _WEB_ROOT ?>/products/detail/<?php echo $product['MASP'] ?>">
                     <?php $product['ANH'] = !empty($product['ANH']) ? $product['ANH'] : 'no-image.png'?>
-                    <img src="public/DataUpload/<?php echo $product['ANH'] ;?>">
+                    <img src="<?php echo _WEB_ROOT ?>/public/DataUpload/<?php echo $product['ANH'] ;?>">
                 </a>
-                <a href="products/detail/<?php echo $product['MASP'] ?>"><p><?php echo $product['TENSP'] ;?></p></a>
+                <a href="<?php echo _WEB_ROOT ?>/products/detail/<?php echo $product['MASP'] ?>"><p><?php echo $product['TENSP'] ;?></p></a>
                 <p><b><?php echo number_format($product['GIA'],0) ;?>đ</b></p>
             </div>
 
@@ -142,7 +139,7 @@
       ?>
     </section>
     <div class="text-center" style="margin: 20px;">
-          <a href="products"><button type="button" class="btn btn-outline-dark">XEM THÊM</button></a>
+          <a href="<?php echo _WEB_ROOT ?>/products"><button type="button" class="btn btn-outline-dark">XEM THÊM</button></a>
     </div>
   </div>
 
@@ -157,11 +154,11 @@
         ?>
             <div class="col-3 ">
                 <div class="text-center img">
-                    <a href="products/detail/<?php echo $product['MASP'] ?>">
+                    <a href="<?php echo _WEB_ROOT ?>/products/detail/<?php echo $product['MASP'] ?>">
                         <?php $product['ANH'] = !empty($product['ANH']) ? $product['ANH'] : 'no-image.png'?>
                         <img src="public/DataUpload/<?php echo $product['ANH'] ;?>">
                     </a>
-                    <a href="products/detail/<?php echo $product['MASP'] ?>"><p><?php echo $product['TENSP'] ;?></p></a>
+                    <a href="<?php echo _WEB_ROOT ?>/products/detail/<?php echo $product['MASP'] ?>"><p><?php echo $product['TENSP'] ;?></p></a>
                     <p><b><?php echo number_format($product['GIA'],0) ;?>đ</b></p>
                 </div>
             </div>
@@ -172,7 +169,7 @@
 
   </section>
   <div class="text-center" style="margin: 20px;">
-        <a href="products"><button type="button" class="btn btn-outline-dark">XEM THÊM</button></a>
+        <a href="<?php echo _WEB_ROOT ?>/products"><button type="button" class="btn btn-outline-dark">XEM THÊM</button></a>
   </div>
 
    <!-- Hệ thống cửa hàng -->

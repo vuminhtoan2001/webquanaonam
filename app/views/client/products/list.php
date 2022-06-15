@@ -2,7 +2,7 @@
     <div class="row" style="margin-top: 20px;">
         <div class="col-12 ">
             <div class="text-center "  >
-                <h4><?php echo $title ?></h4>
+                <h4><?php echo $title; ?></h4>
             </div>
         </div>
     </div>
@@ -15,19 +15,22 @@
                 <div class="col-12 col-md-12 col-lg-12">
                     <div class="products_category" style="padding:3px;width:100%;" name="category">
                         <div class="category_item_link">
-                            <a href="<?php echo _WEB_ROOT."/products"?>">Tất cả</a>
+                            <a href="<?php echo _WEB_ROOT .
+                                '/products'; ?>">Tất cả</a>
                         </div>
-                        <?php
-                            if($category_list){
-                                foreach($category_list as $category){
-                        ?>
+                        <?php if ($category_list) {
+                            foreach ($category_list as $category) { ?>
                                     <div class="category_item_link">
-                                        <a href="<?php echo _WEB_ROOT."/products/category/".$category['MALOAI'] ?>"><?php echo $category['TENLOAI']?></a>
+                                        <a href="<?php echo _WEB_ROOT .
+                                            '/products/category/' .
+                                            $category[
+                                                'MALOAI'
+                                            ]; ?>"><?php echo $category[
+    'TENLOAI'
+]; ?></a>
                                     </div>
-                        <?php
-                                }
-                            }
-                        ?>
+                        <?php }
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -48,22 +51,29 @@
             <hr>
             <h6>THƯƠNG HIỆU</h6>
             <div class="row" style="padding-left:10px">
-
-                <?php
-                        if($brand_list){
-                            foreach($brand_list as $brand){
-                    ?>
+                <div class="form-check .col-sm-6 col-md-6">
+                    <input class="form-check-input" type="radio" name="brand" id="all" value=""  checked="checked">
+                    <label class="form-check-label" for="all">
+                        Tất cả
+                    </label>
+                </div>
+                <?php if ($brand_list) {
+                    foreach ($brand_list as $brand) { ?>
 
                                 <div class="form-check .col-sm-6 col-md-6">
-                                    <input class="form-check-input" type="radio" name="brand" id="<?php echo $brand['MAHANGSX'] ?>" value="<?php echo $brand['MAHANGSX'] ?>" >
-                                    <label class="form-check-label" for="<?php echo $brand['MAHANGSX'] ?>">
-                                        <?php echo $brand['TENHANG'] ?>
+                                    <input class="form-check-input" type="radio" name="brand" id="<?php echo $brand[
+                                        'MAHANGSX'
+                                    ]; ?>" value="<?php echo $brand[
+    'MAHANGSX'
+]; ?>" >
+                                    <label class="form-check-label" for="<?php echo $brand[
+                                        'MAHANGSX'
+                                    ]; ?>">
+                                        <?php echo $brand['TENHANG']; ?>
                                     </label>
                                 </div>
-                    <?php
-                            }
-                        }
-                    ?>
+                    <?php }
+                } ?>
             </div>
             <hr>
             <h6>Sắp xếp </h6>
@@ -99,17 +109,19 @@
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <?php
-                                if($category_list){
-                                    foreach($category_list as $category){
-                            ?>
+                            <?php if ($category_list) {
+                                foreach ($category_list as $category) { ?>
                             <li>
-                                <a class="dropdown-item" href="<?php echo _WEB_ROOT."/products/category/".$category['MALOAI'] ?>"><?php echo $category['TENLOAI']?></a>
+                                <a class="dropdown-item" href="<?php echo _WEB_ROOT .
+                                    '/products/category/' .
+                                    $category[
+                                        'MALOAI'
+                                    ]; ?>"><?php echo $category[
+    'TENLOAI'
+]; ?></a>
                             </li>
-                            <?php
-                                    }
-                                }
-                            ?>
+                            <?php }
+                            } ?>
                         </ul>
                     </div>
                 </div>
@@ -131,20 +143,20 @@
             <hr>
             <h6>THƯƠNG HIỆU</h6>
             <div class="row" style="padding-left:10px">
-                <?php
-                        if($brand_list){
-                            foreach($brand_list as $brand){
-                    ?>
+                <?php if ($brand_list) {
+                    foreach ($brand_list as $brand) { ?>
                         <div class="form-check .col-sm-6">
-                            <input class="form-check-input" type="radio" name="brand" id="<?php echo $brand['MAHANGSX'] ?>" value="<?php echo $brand['MAHANGSX'] ?>" >
-                            <label class="form-check-label" for="<?php echo $brand['MAHANGSX'] ?>">
-                                <?php echo $brand['TENHANG'] ?>
+                            <input class="form-check-input" type="radio" name="brand" id="<?php echo $brand[
+                                'MAHANGSX'
+                            ]; ?>" value="<?php echo $brand['MAHANGSX']; ?>" >
+                            <label class="form-check-label" for="<?php echo $brand[
+                                'MAHANGSX'
+                            ]; ?>">
+                                <?php echo $brand['TENHANG']; ?>
                             </label>
                         </div>
-                    <?php
-                            }
-                        }
-                    ?>
+                    <?php }
+                } ?>
             </div>
             <hr>
             <h6>Sắp xếp </h6>
@@ -164,54 +176,62 @@
       </div>
       <div class="col-12 col-md-9 col-lg-9 list_products " style="margin-top: 20px;" >
           <div class="row">
-            <?php
-                if($product_list){
-                    foreach($product_list as $product){
-            ?>
+            <?php if ($product_list) {
+                foreach ($product_list as $product) { ?>
                 <div class=" col-6 col-sm-4">
                         <div class="text-center img product-item">
-                            <a href="products/detail/<?php echo $product['MASP'] ?>"><img src="public/DataUpload/<?php echo $product['ANH'] ;?>"width="100%"></a>
-                            <a href="products/detail/<?php echo $product['MASP'] ?>"><p><?php echo $product['TENSP']  ?></p></a>
+                            <a href="products/detail/<?php echo $product[
+                                'MASP'
+                            ]; ?>"><img src="public/DataUpload/<?php echo $product[
+    'ANH'
+]; ?>"width="100%"></a>
+                            <a href="products/detail/<?php echo $product[
+                                'MASP'
+                            ]; ?>"><p><?php echo $product['TENSP']; ?></p></a>
                             <p class="product-price">
-                                <?php
-                                    if($product['GIA_SALE'] == 0) {
-                                ?>
-                                <b><?php  echo number_format($product['GIA'],0) ?>đ</b>
-                                <?php
-                                    }else {
-                                ?>
-                                <span class="current-price"><b><?php  echo number_format($product['GIA_SALE'],0) ?>đ</b></span>
-                                <span class="original-price"><?php  echo number_format($product['GIA'],0) ?>đ</span>
-                                <?php
-                                    }
-                                ?>
+                                <?php if ($product['GIA_SALE'] == 0) { ?>
+                                <b><?php echo number_format(
+                                    $product['GIA'],
+                                    0
+                                ); ?>đ</b>
+                                <?php } else { ?>
+                                <span class="current-price"><b><?php echo number_format(
+                                    $product['GIA_SALE'],
+                                    0
+                                ); ?>đ</b></span>
+                                <span class="original-price"><?php echo number_format(
+                                    $product['GIA'],
+                                    0
+                                ); ?>đ</span>
+                                <?php } ?>
                             </p>
                             <?php
-                                $discount = round(($product['GIA_SALE'] / $product['GIA']) *100);
-                                if($discount > 0) {
-                                ?>
+                            $discount = round(
+                                ($product['GIA_SALE'] / $product['GIA']) * 100
+                            );
+                            if ($discount > 0) { ?>
                                     <div class="product-tags">
                                         <span class="tag-sale">
-                                        <?php echo "- ".(100 -$discount)."%";?>
+                                        <?php echo '- ' .
+                                            (100 - $discount) .
+                                            '%'; ?>
                                         </span>
                                     </div>
-                                <?php
-                                }
-                                ?>
+                                <?php }
+                            ?>
                         </div>
                 </div>
-            <?php
-                    }
-                }else{
-                    echo "Không có sản phẩm nào!";
-                }
-            ?>
+            <?php }
+            } else {
+                echo 'Không có sản phẩm nào!';
+            } ?>
             <!-- pagination -->
-            <?php
-                if(file_exists(_DIR_ROOT.'/app/views/blocks/pagination.php') && isset($sum_page)){
-                    require_once _DIR_ROOT.'/app/views/blocks/pagination.php';
-                }
-                ?>
+            <?php if (
+                file_exists(_DIR_ROOT . '/app/views/blocks/pagination.php') &&
+                isset($sum_page)
+            ) {
+                require_once _DIR_ROOT . '/app/views/blocks/pagination.php';
+            } ?>
             <!-- pagination -->
 
           </div>

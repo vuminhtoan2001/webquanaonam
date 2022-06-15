@@ -184,8 +184,8 @@
                 ?>
                     <div class="col-4 ">
                             <div class="text-center img">
-                                <a href="products/detail/<?php echo $product['MASP'] ?>"><img src="<?php echo _WEB_ROOT ?>/public/DataUpload/<?php echo $product['ANH'] ;?>"width="100%"></a>
-                                <a href="products/detail/<?php echo $product['MASP'] ?>"><p><?php echo $product['TENSP']  ?></p></a>
+                                <a href="<?php echo _WEB_ROOT ?>/products/detail/<?php echo $product['MASP'] ?>"><img src="<?php echo _WEB_ROOT ?>/public/DataUpload/<?php echo $product['ANH'] ;?>"width="100%"></a>
+                                <a href="<?php echo _WEB_ROOT ?>/products/detail/<?php echo $product['MASP'] ?>"><p><?php echo $product['TENSP']  ?></p></a>
                                 <p><b><?php  echo number_format($product['GIA'],0) ?>đ</b></p>
                             </div>
                     </div>

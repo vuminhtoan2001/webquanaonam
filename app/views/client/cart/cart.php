@@ -1,63 +1,69 @@
 <?php
-    $tong=0;
-    $soluong=0;
+$tong = 0;
+$soluong = 0;
 ?>
-<form action="<?php echo _WEB_ROOT."/cart\/update_cart"?>" method="POST">
+<form action="<?php echo _WEB_ROOT . '/cart\/update_cart'; ?>" method="POST">
   <div class="container" >
       <div style="margin-top: 20px" >
         <h4>
             GIỎ HÀNG CỦA BẠN
                 (
-                    <?php if(isset($_SESSION["soluong"])){  ?>
+                    <?php if (isset($_SESSION['soluong'])) { ?>
                     ĐANG CÓ
-                    <?php
-                        echo ($_SESSION["soluong"]==""? 0 : $_SESSION["soluong"]); ?>  SẢN PHẨM )
-                    <?php  }else{
-                          echo "CHƯA CÓ SẢN PHẨM NÀO )";
-                      }
-
-                ?>
+                    <?php echo $_SESSION['soluong'] == ''
+                        ? 0
+                        : $_SESSION['soluong']; ?>  SẢN PHẨM )
+                    <?php } else {echo 'CHƯA CÓ SẢN PHẨM NÀO )';} ?>
 
         </h4>
-        <table class="table ">
-          <thead>
+        <table class="table cart">
+          <thead class="cart_title d-none-tablet" >
             <tr>
               <th scope="col">Sản phẩm</th>
               <th scope="col">Đơn giá</th>
-              <th scope="col">Số lượng</th>
-              <th scope="col">Thành tiền</th>
-              <th scope="col"> </th>
+              <th scope="col" class="d-none-tablet">Số lượng</th>
+              <th scope="col" class="d-none-tablet">Thành tiền</th>
+              <th scope="col"class="d-none-mobile"> </th>
             </tr>
           </thead>
           <tbody>
-            <?php
-              if(isset($_SESSION["cart"])){
-                  foreach($_SESSION["cart"] as $k=>$val){
-            ?>
-
+            <?php if (isset($_SESSION['cart'])) {
+                foreach ($_SESSION['cart'] as $k => $val) { ?>
                   <tr>
-                  <td><a href=""><img src="<?php echo _WEB_ROOT ?>/public/DataUpload/<?php echo $val['ANHSP'] ;?>" style="width:80px; height:auto"></a>      <b><?php echo $val["TENSP"]?></b></td>
-                  <td><?PHP  echo number_format($val["GIATIEN"],0)?>đ</td>
-                  <td>
-                      <div class="btn-group form-check-inline" role="group" aria-label="Basic outlined example">
-
-                              <input type="number" min="1" value= "<?php echo $val["qty"];  ?>" name="qty[<?php echo $k; ?>]" >
-
+                    <td>
+                      <a href=""><img src="<?php echo _WEB_ROOT; ?>/public/DataUpload/<?php echo $val['ANHSP']; ?>" style="width:80px; height:auto"></a>
+                      <b class="d-none-tablet"><?php echo $val['TENSP']; ?></b>
+                    </td>
+                    <td>
+                      <b class="d-none-pc"><?php echo $val['TENSP']; ?></b>
+                      <p style="display:block"><?php echo number_format($val['GIATIEN'], 0); ?>đ</p>
+                      <div class="btn-group form-check-inline d-none-pc" role="group" aria-label="Basic outlined example" style="margin-bottom:10px">
+                        <input type="number" min="1" value= "<?php echo $val['qty']; ?>" name="qty[<?php echo $k; ?>]" >
                       </div>
+                      <a href="<?php echo _WEB_ROOT; ?>/cart/delete_cart/<?php echo $k; ?>"><i class="far fa-trash-alt  d-none-tablet-pc ;" style="color:black;font-size:20px"></i></a>
+                    </td>
+                    <td class="d-none-tablet">
+                        <div class="btn-group form-check-inline" role="group" aria-label="Basic outlined example">
+                          <input type="number" min="1" value= "<?php echo $val['qty']; ?>" name="qty[<?php echo $k; ?>]" >
+                        </div>
 
-                  </td>
+                    </td>
 
-                  <td><?PHP  echo number_format($val["GIATIEN"]*$val["qty"],0); $tong+=$val["GIATIEN"]*$val["qty"];?>đ</td>
+                    <td class="d-none-tablet">
+                      <?php
+                      echo number_format($val['GIATIEN'] * $val['qty'], 0);
+                      $tong += $val['GIATIEN'] * $val['qty'];
+                      ?>đ
+                    </td>
 
-                  <td> <a href="<?php echo _WEB_ROOT ?>/cart/delete_cart/<?php echo $k; ?>"><i class="far fa-trash-alt" style="color:black;font-size:20px"></i></a></td>
-              </tr>
-            <?php
-
-                  }
-              }else{
-                  echo "Chưa có sản phẩm nào trong giỏ hàng.";
-              }
-            ?>
+                    <td class="d-none-mobile">
+                      <a href="<?php echo _WEB_ROOT; ?>/cart/delete_cart/<?php echo $k; ?>"><i class="far fa-trash-alt" style="color:black;font-size:20px"></i></a>
+                    </td>
+                  </tr>
+            <?php }
+            } else {
+                echo 'Chưa có sản phẩm nào trong giỏ hàng.';
+            } ?>
 
           </tbody>
         </table>
@@ -72,7 +78,7 @@
           </div>
           <div class="col-6 col-sm-5 col-md-4 col-lg 3">
               <p></p>
-              <b>Tổng: <?php echo number_format($tong,0) ?>đ</b>
+              <b>Tổng: <?php echo number_format($tong, 0); ?>đ</b>
               <p></p>
               <div >
                   <input class="btn btn-dark" type="submit" name="submit" value="Cập nhật">
@@ -83,12 +89,14 @@
       <div class="col-6 ">
         <div class="mb-3">
 
-            <a href="<?php echo _WEB_ROOT."/products";?>"  class="btn btn-dark"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng </a>
+            <a href="<?php echo _WEB_ROOT .
+                '/products'; ?>"  class="btn btn-dark"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng </a>
         </div>
       </div>
       <div class="col-6" style="text-align:right">
 
-              <a href="<?php echo _WEB_ROOT."/cart/payment";?>" class="btn btn-dark btn-lager">Thanh toán <i class="fa fa-angle-right"></i></a>
+              <a href="<?php echo _WEB_ROOT .
+                  '/cart/payment'; ?>" class="btn btn-dark btn-lager">Thanh toán <i class="fa fa-angle-right"></i></a>
 
       </div>
     </div>

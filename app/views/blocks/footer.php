@@ -1,6 +1,6 @@
 <div class="footer" style="margin-top: 40px">
         <div class="row">
-            <div class="col-6 col-sm-6 col-md-6 col-lg-4 ">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 ">
                 <div class="title">
                     <i><b>ĐĂNG KÝ NHẬN THÔNG TIN MỚI TỪ SHOP</b></i>
                 </div>
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div class="col-6 col-sm-6 col-md-6 col-lg-3 ">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 ">
                 <div class="title">
                     <i><b>CHĂM SÓC KHÁCH HÀNG</b></i>
                 </div>
@@ -28,7 +28,7 @@
                     <li><a href="#">Tất cả sản phẩm</a></li>
                 </div>
             </div>
-            <div class="col-6 col-sm-6 col-md-6 col-lg-2 ">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-2 ">
                 <div class="title">
                     <i><b>CHÍNH SÁCH</b></i>
                 </div>
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="col-6 col-sm-6 col-md-6 col-lg-3 ">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 ">
                 <div class="title">
                     <i><b>LIÊN HỆ VỚI CHÚNG TÔI</b></i>
                 </div>
